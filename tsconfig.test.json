@@ -1,0 +1,26 @@
+{
+  "extends": "@tsconfig/node24/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "sourceMap": true,
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "declaration": true,
+    "module": "nodenext",
+    "pretty": true,
+    "noEmitOnError": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "rootDir": ".",
+    "resolveJsonModule": true,
+    "newLine": "lf",
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "test"],
+  "exclude": ["test/types"]
+}

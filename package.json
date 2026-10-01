@@ -1,0 +1,83 @@
+{
+  "name": "fastify-inertia-adapter",
+  "version": "0.2.0",
+  "description": "Inertia.js v3 server-side adapter for Fastify",
+  "license": "MIT",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "default": "./dist/vite.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "keywords": [
+    "fastify",
+    "fastify-plugin",
+    "inertia",
+    "inertiajs",
+    "adapter",
+    "ssr"
+  ],
+  "scripts": {
+    "build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepublishOnly": "npm run build",
+    "test": "node --import tsx --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.test.json && tsc -p example && vue-tsc --noEmit -p example/client",
+    "example": "tsx example/server.ts",
+    "example:build": "vite build --config example/vite.config.ts && vite build --config example/vite.config.ts --ssr client/ssr.ts --outDir dist/ssr"
+  },
+  "dependencies": {
+    "fastify-plugin": "^5.0.1"
+  },
+  "peerDependencies": {
+    "@fastify/middie": "^8.0.0 || ^9.0.0",
+    "@fastify/static": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "fastify": "^4.26.0 || ^5.0.0",
+    "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "devDependencies": {
+    "@fastify/cookie": "^11.0.0",
+    "@fastify/middie": "^9.3.4",
+    "@fastify/session": "^11.0.0",
+    "@fastify/static": "^10.1.5",
+    "@inertiajs/vite": "^3.7.1",
+    "@inertiajs/vue3": "^3.7.1",
+    "@tsconfig/node24": "^24.0.5",
+    "@types/node": "^24.0.0",
+    "@vitejs/plugin-vue": "^6.0.9",
+    "eslint": "^9.17.0",
+    "fastify": "^5.0.0",
+    "neostandard": "^0.13.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^8.3.1",
+    "vue": "^3.5.43",
+    "vue-tsc": "^3.3.11"
+  },
+  "peerDependenciesMeta": {
+    "@fastify/middie": {
+      "optional": true
+    },
+    "@fastify/static": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "moduleResolution": "node16",
+    "esModuleInterop": true,
+    "declaration": true,
+    "target": "es2022",
+    "module": "node16",
+    "pretty": true,
+    "noEmitOnError": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "rootDir": "./src",
+    "resolveJsonModule": true,
+    "newLine": "lf",
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "lib": ["ESNext"]
+  },
+  "include": ["src"]
+}
